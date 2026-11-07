@@ -107,3 +107,17 @@ while continuar == "s" or continuar == "S":
 
     # CALCULAR PRIORIDAD
     prioridadFinal[contadordepacientes - 1] = CalcularPrioridad(nivelEmergencia[contadordepacientes - 1],tipoSolicitud)
+
+    # MOSTRAR PACIENTE REGISTRADO
+    print()
+    print("============================")
+    print("     SOLICITUD REGISTRADA")
+    print("============================")
+
+    print(f"Código: {codigoActual[contadordepacientes - 1]}")
+    print(f"Fecha: {fecha[contadordepacientes - 1]}")
+    print(f"Paciente: {nombres[contadordepacientes - 1]} {apellidos[contadordepacientes - 1]}")
+    print(f"DNI: {dni[contadordepacientes - 1]}")
+    print(f"Centro de Salud: {centroSalud}")
+    print(f"Distrito: {distrito}")
+    print(f"Tipo de Solicitud: {tipoSolicitud}")
