@@ -41,3 +41,36 @@ centroSalud = "Hospital Nacional Unanue"
 tipoSolicitud = (str(input()))
 descripcion = (str(input()))
 
+# hola
+
+while continuar == "s" or continuar == "S":
+    print("==================")
+    print("")
+    print("DATOS DEL PACIENTE")
+    print("")
+    print("==================")
+
+    codigoActual[contadordepacientes - 1] = GenerarCodigoPaciente(contadordepacientes)
+
+    # NOMBRES
+    print("Ingrese los nombres completos:")
+    nombres[contadordepacientes - 1] = input()
+
+    # APELLIDOS
+    print("Ingrese los apellidos completos:")
+    apellidos[contadordepacientes - 1] = input()
+
+    # DNI
+    print("Ingrese su DNI (8 dígitos):")
+    dni[contadordepacientes - 1] = int(input())
+
+    # FECHA
+    fecha[contadordepacientes - 1] = datetime.now().strftime("%d/%m/%Y")
+
+    # NIVEL DE EMERGENCIA
+    print("¿Nivel de Emergencia? (1 al 5)")
+    nivelEmergencia[contadordepacientes - 1] = int(input())
+
+    # SOLICITUD
+    print("¿Tipo de solicitud? (Ambulancia, Consulta, Medicamentos).")
+    tipoSolicitud[contadordepacientes - 1] = str(input())
