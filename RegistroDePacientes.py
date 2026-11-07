@@ -121,3 +121,15 @@ while continuar == "s" or continuar == "S":
     print(f"Centro de Salud: {centroSalud}")
     print(f"Distrito: {distrito}")
     print(f"Tipo de Solicitud: {tipoSolicitud}")
+
+    # ESTADO DE EMERGENCIA
+    if nivelEmergencia[contadordepacientes - 1] == 1:
+        print("Estado: Leve")
+    elif nivelEmergencia[contadordepacientes - 1] == 2:
+        print("Estado: Poco Leve")
+    elif nivelEmergencia[contadordepacientes - 1] == 3:
+        print("Estado: Severo")
+    elif nivelEmergencia[contadordepacientes - 1] == 4:
+        print("Estado: Muy Severo")
+    elif nivelEmergencia[contadordepacientes - 1] == 5:
+        print("Estado: Peligro")
