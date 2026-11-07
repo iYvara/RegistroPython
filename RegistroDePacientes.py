@@ -1,3 +1,5 @@
+import datetime
+
 def GenerarCodigoPaciente(contador):
     numeroTexto = str(contador)
     while len(numeroTexto) < 4:
@@ -14,4 +16,13 @@ def CalcularPrioridad(nivelEmergencia, tipoSolicitud):
     elif tipoSolicitud == "Medicamentos":
         prioridad = prioridad + 2
     return prioridad
+
+# VARIABLES:
+
+contadordepacientes = 0
+i = 0
+encontrado = False
+continuar = "s"
+decision = ""
+codigoBusqueda = ""
 
