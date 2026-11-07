@@ -1,5 +1,3 @@
-import datetime
-
 def GenerarCodigoPaciente(contador):
     numeroTexto = str(contador)
     while len(numeroTexto) < 4:
@@ -19,7 +17,7 @@ def CalcularPrioridad(nivelEmergencia, tipoSolicitud):
 
 # VARIABLES:
 
-contadordepacientes = 0
+contadordepacientes = 1
 i = 0
 encontrado = False
 continuar = "s"
@@ -38,12 +36,12 @@ prioridadFinal = [0] * 100
 
 distrito = "El Agustino"
 centroSalud = "Hospital Nacional Unanue"
-tipoSolicitud = (str(input()))
+tipoSolicitud = ""
 descripcion = (str(input()))
 
 # hola
 
-while continuar == "s" or continuar == "S":
+while True:
     print("==================")
     print("")
     print("DATOS DEL PACIENTE")
@@ -52,7 +50,7 @@ while continuar == "s" or continuar == "S":
 
     codigoActual[contadordepacientes - 1] = GenerarCodigoPaciente(contadordepacientes)
 
-# NOMBRES
+    # NOMBRES
     while True:
         print("Ingrese los nombres completos:")
         nombres[contadordepacientes - 1] = input()
@@ -98,15 +96,15 @@ while continuar == "s" or continuar == "S":
     # SOLICITUD
     while True:
         print("¿Tipo de solicitud? (Ambulancia, Consulta, Medicamentos).")
-        tipoSolicitud[contadordepacientes - 1] = str(input())
+        tipoSolicitud = str(input())
 
-        if tipoSolicitud[contadordepacientes - 1] == "":
+        if tipoSolicitud == "":
             print("Ingrese correctamente el tipo de solicitud")
         else:
             break
 
     # CALCULAR PRIORIDAD
-    prioridadFinal[contadordepacientes - 1] = CalcularPrioridad(nivelEmergencia[contadordepacientes - 1],tipoSolicitud)
+    prioridadFinal[contadordepacientes - 1] = CalcularPrioridad(nivelEmergencia[contadordepacientes - 1], tipoSolicitud)
 
     # MOSTRAR PACIENTE REGISTRADO
     print()
@@ -148,9 +146,9 @@ while continuar == "s" or continuar == "S":
     if continuar == "N":
         break
 
-    # BUSCAR PACIENTE
-    while True:
-        print()
+# BUSCAR PACIENTE
+while True:
+    print()
     print("============================")
     print("       BUSCAR PACIENTE")
     print("============================")
@@ -180,3 +178,14 @@ while continuar == "s" or continuar == "S":
             print(f"Nivel de Emergencia: {nivelEmergencia[i - 1]}")
             print(f"Prioridad: {prioridadFinal[i - 1]}")
             print(f"Descripción: {descripcion}")
+
+    if encontrado == False:
+        print("Error: no se encontró ningún paciente con ese código.")
+
+    print()
+    print("¿Desea buscar otro paciente? (S/N)")
+
+    decision = input().upper()
+
+    if decision == "N":
+        break
