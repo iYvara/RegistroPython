@@ -147,3 +147,36 @@ while continuar == "s" or continuar == "S":
 
     if continuar == "N":
         break
+
+    # BUSCAR PACIENTE
+    while True:
+        print()
+    print("============================")
+    print("       BUSCAR PACIENTE")
+    print("============================")
+
+    print("Ingrese el código del paciente:")
+    codigoBusqueda = input()
+
+    encontrado = False
+
+    # RECORRER LOS PACIENTES
+    for i in range(1, contadordepacientes + 1):
+        if codigoBusqueda == codigoActual[i - 1]:
+            encontrado = True
+
+            print()
+            print("============================")
+            print("      PACIENTE ENCONTRADO")
+            print("============================")
+
+            print(f"Código: {codigoActual[i - 1]}")
+            print(f"Fecha: {fecha[i - 1]}")
+            print(f"Paciente: {nombres[i - 1]} {apellidos[i - 1]}")
+            print(f"DNI: {dni[i - 1]}")
+            print(f"Centro de Salud: {centroSalud}")
+            print(f"Distrito: {distrito}")
+            print(f"Tipo de Solicitud: {tipoSolicitud}")
+            print(f"Nivel de Emergencia: {nivelEmergencia[i - 1]}")
+            print(f"Prioridad: {prioridadFinal[i - 1]}")
+            print(f"Descripción: {descripcion}")
