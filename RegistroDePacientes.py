@@ -88,6 +88,30 @@ def CargarPacientes():
                 cantidad = cantidad + 1
     return cantidad
 
+# mostrar y/o ordenar solicitudes
+def MostrarSolicitudes(cantidad, ordenar):
+    if cantidad == 0:
+        print("No hay solicitudes registradas.")
+        return
+
+    orden = list(range(cantidad))
+
+    if ordenar:
+        orden = sorted(orden, key=lambda k: prioridadFinal[k], reverse=True)
+
+    print()
+    print("=" * 89)
+    if ordenar:
+        print("SOLICITUDES ORDENADAS POR PRIORIDAD (mayor a menor)")
+    else:
+        print("SOLICITUDES REGISTRADAS")
+    print("=" * 89)
+    print(f"{'Código':<10}{'Fecha':<12}{'Paciente':<30}{'DNI':<10}{'Tipo':<14}{'Nivel':<7}{'Prior.':<6}")
+
+    for k in orden:
+        paciente = nombres[k] + " " + apellidos[k]
+        print(f"{codigoActual[k]:<10}{fecha[k]:<12}{paciente:<30}{dni[k]:<10}{tipoSolicitud[k]:<14}{nivelEmergencia[k]:<7}{prioridadFinal[k]:<6}")
+
 
 # hola
 
