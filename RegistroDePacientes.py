@@ -104,3 +104,6 @@ while continuar == "s" or continuar == "S":
             print("Ingrese correctamente el tipo de solicitud")
         else:
             break
+
+    # CALCULAR PRIORIDAD
+    prioridadFinal[contadordepacientes - 1] = CalcularPrioridad(nivelEmergencia[contadordepacientes - 1],tipoSolicitud)
