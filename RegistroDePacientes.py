@@ -26,3 +26,18 @@ continuar = "s"
 decision = ""
 codigoBusqueda = ""
 
+# LISTAS con datos:
+
+codigoActual = [""] * 100
+nombres = [""] * 100
+apellidos = [""] * 100
+dni = [0] * 100
+fecha = [""] * 100
+nivelEmergencia = [0] * 100
+prioridadFinal = [0] * 100
+
+distrito = "El Agustino"
+centroSalud = "Hospital Nacional Unanue"
+tipoSolicitud = (str(input()))
+descripcion = (str(input()))
+
