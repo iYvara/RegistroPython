@@ -121,6 +121,8 @@ while continuar == "s" or continuar == "S":
     print(f"Centro de Salud: {centroSalud}")
     print(f"Distrito: {distrito}")
     print(f"Tipo de Solicitud: {tipoSolicitud}")
+    print(f"Prioridad: {prioridadFinal[contadordepacientes - 1]}")
+    print(f"Descripción: {descripcion}")
 
     # ESTADO DE EMERGENCIA
     if nivelEmergencia[contadordepacientes - 1] == 1:
@@ -133,3 +135,15 @@ while continuar == "s" or continuar == "S":
         print("Estado: Muy Severo")
     elif nivelEmergencia[contadordepacientes - 1] == 5:
         print("Estado: Peligro")
+
+    # REGISTRAR OTRO PACIENTE
+    print()
+    print("¿Desea registrar otro paciente? (S/N)")
+
+    continuar = input().upper()
+
+    if continuar == "S":
+        contadordepacientes = contadordepacientes + 1
+
+    if continuar == "N":
+        break
