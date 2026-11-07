@@ -52,25 +52,55 @@ while continuar == "s" or continuar == "S":
 
     codigoActual[contadordepacientes - 1] = GenerarCodigoPaciente(contadordepacientes)
 
-    # NOMBRES
-    print("Ingrese los nombres completos:")
-    nombres[contadordepacientes - 1] = input()
+# NOMBRES
+    while True:
+        print("Ingrese los nombres completos:")
+        nombres[contadordepacientes - 1] = input()
+
+        if nombres[contadordepacientes - 1] == "":
+            print("Error: debe ingresar los nombres.")
+        else:
+            break
 
     # APELLIDOS
-    print("Ingrese los apellidos completos:")
-    apellidos[contadordepacientes - 1] = input()
+    while True:
+        print("Ingrese los apellidos completos:")
+        apellidos[contadordepacientes - 1] = input()
+
+        if apellidos[contadordepacientes - 1] == "":
+            print("Error: debe ingresar los apellidos.")
+        else:
+            break
 
     # DNI
-    print("Ingrese su DNI (8 dígitos):")
-    dni[contadordepacientes - 1] = int(input())
+    while True:
+        print("Ingrese su DNI (8 dígitos):")
+        dni[contadordepacientes - 1] = int(input())
+
+        if dni[contadordepacientes - 1] < 10000000 or dni[contadordepacientes - 1] > 99999999:
+            print("Error: el DNI debe tener 8 dígitos.")
+
+        else:
+            break
 
     # FECHA
     fecha[contadordepacientes - 1] = datetime.now().strftime("%d/%m/%Y")
 
     # NIVEL DE EMERGENCIA
-    print("¿Nivel de Emergencia? (1 al 5)")
-    nivelEmergencia[contadordepacientes - 1] = int(input())
+    while True:
+        print("¿Nivel de Emergencia? (1 al 5)")
+        nivelEmergencia[contadordepacientes - 1] = int(input())
+        if nivelEmergencia[contadordepacientes - 1] < 1 or nivelEmergencia[contadordepacientes - 1] > 5:
+            print("Error: ingrese un nivel entre 1 y 5.")
+        else:
+            break
 
     # SOLICITUD
-    print("¿Tipo de solicitud? (Ambulancia, Consulta, Medicamentos).")
-    tipoSolicitud[contadordepacientes - 1] = str(input())
+    while True:
+        print("¿Tipo de solicitud? (Ambulancia, Consulta, Medicamentos).")
+        tipoSolicitud[contadordepacientes - 1] = str(input())
+
+        if tipoSolicitud[contadordepacientes - 1] == "":
+            print("Ingrese correctamente el tipo de solicitud")
+        else:
+            break
